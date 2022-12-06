@@ -1,0 +1,34 @@
+.input{
+    background-color: transparent;
+    margin-left: 10px;
+    height: 3.5vh;
+    width: 15vw;
+    margin-right: 5px;
+    border-radius: 10px;
+   
+}
+
+.cont_search{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.lupa{
+    width: 3vw;
+    height: 3vh;
+    background-color:none;
+    cursor:pointer;
+}
+
+.button{
+    background-color:  transparent;
+    border: none;
+
+}
+
+button{
+    background-color:  transparent;
+    border: none;
+}

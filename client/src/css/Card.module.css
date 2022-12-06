@@ -1,0 +1,44 @@
+.container {
+    /* border: solid 1px transparent; */
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 10px;
+    opacity: 2;
+    background-color: rgba(240, 248, 255, 0.37);
+    color: black;
+    border-radius:20% ;
+    text-decoration: none;
+
+  }
+  
+  
+  
+  .container:hover {
+    background-color: rgba(240, 248, 255, 0.664) ;
+    transition: 0.5s;
+    opacity: 4;
+   
+  }
+
+  a:link, a:visited, a:active {
+    text-decoration:none;
+  }
+
+  .name {
+    color: black;
+    text-align: center;
+  }
+  
+  .img {
+    display: block;
+    margin: auto;
+  }
+  
+  .types {
+    display: inline-flex;
+    color: black;
+    width: 100%;
+    justify-content: center;
+
+  }

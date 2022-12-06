@@ -1,0 +1,80 @@
+.padre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    width: 100%;
+    margin: 0 auto;
+    bottom: 13px;
+    position: relative;
+    bottom: 5px;
+    filter: brightness(90%);
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+
+.contenedor button{
+    margin: 0 0px 0 0px;
+    border-radius: 100%;
+    font-weight: bolder;
+    justify-content: space-between;
+    text-align: center;
+    color: transparent;
+    border: none;
+    transition: .5s;
+    cursor: pointer;
+
+}
+
+
+.prev{
+    background-image: url('https://cdn.icon-icons.com/icons2/1132/PNG/512/1486348529-back-backwards-repeat-arrows-arrow_80455.png');
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: space-between;
+
+}
+
+.next{
+    background-image: url('https://cdn.icon-icons.com/icons2/1132/PNG/512/1486348528-forward-arrows-arrow-front-go_80452.png');
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    border: none;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: space-between;
+
+}
+
+.paginado{
+    background-color: rgba(233, 102, 42, 0.906);
+    display:inline;
+    padding-left:6px;
+    padding-right:6px;
+    margin-right: 4px;
+    font-size: 25px;
+    border-radius: 15px;
+    cursor:pointer;
+    transition: 3s;
+    margin-left: 5px;
+    margin-right: 5px;
+                                    
+}
+
+span{
+    color: rgb(17, 17, 17);
+}
+
+.next:active {
+    transform: scale(1.5);
+  }
+  .prev:active {
+    transform: scale(1.5);
+  }

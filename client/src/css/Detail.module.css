@@ -1,0 +1,79 @@
+.padre{
+ 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    background-color: rgba(244, 220, 139, 0.614);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35vw;
+    height: auto;
+    margin-top: 60px;
+    margin-left: 160px;
+    border-radius: 15px;
+  
+   
+}
+
+
+.pokeimg{
+    height: 200px;
+    width: 200px;
+    border-radius: 10px;
+    animation-name: appear;
+    animation-duration: 3s;
+}
+
+
+
+
+.progressContainer{
+  display: flex;
+  color: rgb(6, 6, 6);
+  margin-right: 300px;
+  text-align: center;
+  justify-content: space-around; 
+ 
+
+
+}
+
+.progressContainer progress{
+    border-radius: 7px; 
+  width: 200px;
+  height: 12px;
+  margin-top: 8px;
+  animation: load 3s ease-out forwards;
+  flex-direction: row;
+  position: absolute;
+  left: 22%;
+}
+
+.detail p{
+  margin-top: 4px;
+  position: absolute;
+  text-align: left;
+  left: 590px;
+  font-size: .8em;
+  color:  #141313
+}
+
+
+.detail h3{
+  font-size: .9em;
+  color:  #060606;
+  margin: 4px;
+  
+}
+
+.typesdetail{
+  margin-top: 10px;
+}
+
+.typesdetail{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+}
