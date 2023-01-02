@@ -2,7 +2,7 @@ import React from 'react'
 import { Link ,useParams, useNavigate} from 'react-router-dom'
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import {getPokeDetail} from "../actions"
+import {getPokeDetail, clean} from "../actions"
 import style from "../css/Detail.module.css"
 
 
@@ -18,13 +18,25 @@ const Detail =()=>{
         dispatch(getPokeDetail(id))
     },[dispatch,id])
 
+    const handleClick=()=>{
+        dispatch(clean())
+    }
 
   
     return(
         <div  className={style.padre}>
+            <div className={style.cont_sup}>
+                 <Link to="/home" >
+                    <button className={style.back_detail} onClick={handleClick} >Back</button>
+                </Link>
+         
+
+            </div>
+           
             {
                 poke.length > 0? 
                 <div className={style.detail}>
+                   
                     <h1>{poke[0].name.toUpperCase()}</h1>
                     <img  className={style.pokeimg} src={poke[0].img} alt="" />
 

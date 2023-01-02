@@ -88,8 +88,9 @@ const getallInfo = async()=>{
 
 router.get('/pokemons', async(req,res)=>{
     const {name} = req.query;
-    const todos = await getallInfo();
+    
     try{
+        const todos = await getallInfo();
         ///si no pasamos nombre por query
         if(!name){
             res.status(200).send(todos)
@@ -167,6 +168,24 @@ router.post("/pokemons", async(req,res)=>{
         console.log(err)
     }
 })
+
+router.get("/pokemon/bytypes/:type", async(req,res)=>{
+    const type = req.params.type;
+   try {
+    const allpoke = await getallInfo();
+    if(type){
+        let filtrados = allpoke.filter(e=> e.types?.includes(type));
+        !filtrados.length ? res.send(allpoke) : res.send(filtrados); 
+    }else{
+        res.send(404);
+    }
+    }catch(err){
+        console.log(err)
+    }
+})
+
+
+
 
 
 

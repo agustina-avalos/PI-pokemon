@@ -40,12 +40,12 @@ function rootReducer(state = initialState, action){
             }
 
         case "FILTER_BY_TYPES":
-            const allpoke = state.copiPoke;
+           /*  const allpoke = state.copiPoke;
             const filtrados = action.payload ==="all" ? allpoke :
-            allpoke.filter(p => p.types?.includes(action.payload))
+            allpoke.filter(p => p.types?.includes(action.payload)) */
             return{
                ...state,
-               pokemons: filtrados
+               pokemons: action.payload
             }
         case "FILTER_BY_DB":
             const all = state.copiPoke;
@@ -72,6 +72,12 @@ function rootReducer(state = initialState, action){
                 return{
                     ...state,
                     pokemons: filterattack
+                }
+                
+            case "CLEAN_POKEMON":
+                return{
+                    ...state,
+                    detail: []
                 }
             default:
                 return state

@@ -52,12 +52,23 @@ export const PostPokemon =(payload)=>{
 }
 
 
-export const filterByTypes = (payload) =>{
+/* export const filterByTypes = (payload) =>{
     return {
         type: "FILTER_BY_TYPES",
         payload
     }
 }
+ */
+export const filterByTypes = (payload) =>{
+    return async function(dispatch){
+        let filtrados = await axios.get("http://localhost:3001/pokemon/bytypes/" + payload);
+        return dispatch({
+            type: "FILTER_BY_TYPES",
+            payload: filtrados.data
+        })
+    }
+}
+
 
 export const filterByPokeDB = (payload) =>{
     return{
@@ -76,6 +87,13 @@ export const OrderByName = (payload)=>{
 export const OrderByAttack=(payload)=>{
     return{
         type:"ORDER_BY_ATTACK",
+        payload
+    }
+}
+
+export const clean =(payload)=>{
+    return{
+        type:"CLEAN_POKEMON",
         payload
     }
 }

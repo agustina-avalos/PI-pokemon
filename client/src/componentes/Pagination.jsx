@@ -33,7 +33,7 @@ const Pagination = ({pokemonPerPage, allPoke, pagination, currentPage,setCurrent
                         ))
                     }
 
-                    <button className={style.next} onClick={NextPage} disabled={currentPage === Math.ceil(max) || currentPage >Math.ceil(max) }> {'>'} </button>
+                    <button className={style.next} onClick={NextPage} disabled={currentPage === Math.ceil(max) || currentPage > Math.ceil(max) }> {'>'} </button>
 
                 </ul>
             </nav>

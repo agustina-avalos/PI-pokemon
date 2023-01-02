@@ -1,5 +1,5 @@
 import React , {useEffect,useState} from 'react'
-import {Link, Navigation,useNavigate} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux";
 import {getTypes,PostPokemon} from "../actions"
 import style from "../css/Create.module.css"
@@ -56,10 +56,15 @@ const Create = ()=>{
     }
 
      const handleDelete=(e)=>{
+        setErrors(validate({
+            ...input,
+            types: input.types.filter(type => type !== e),
+        }))
         SetInput({
             ...input,
             types: input.types.filter(type => type !== e),
         })
+
 
     }
  
@@ -84,7 +89,6 @@ const Create = ()=>{
 
     const HandleSubmit=(e)=>{
         e.preventDefault();
-      
         dispatch(PostPokemon(input));
         alert("pokeamigo creado con exito");
         SetInput({
@@ -98,8 +102,7 @@ const Create = ()=>{
         img:"",
         types:[]
         })
-       
-       
+        navigate("/home")
     }
     
 
@@ -108,11 +111,11 @@ const Create = ()=>{
 
         <h1 className={style.title}>CREATE YOUR POKEMON! !</h1>
 
-        <form onSubmit={HandleSubmit}  className={style.padreForm} >
+        <form onSubmit={HandleSubmit}  className={style.padreForm}  >
 
             <div className={style.formhijo}>
                <label>Pokemon Name: </label>
-               <input  type="text" value={input.name} name= "name" onChange={(e)=>handleChange(e)} />
+               <input  type="text" value={input.name} name= "name" onChange={(e)=>handleChange(e)} autoComplete={"off"} />
                <span className={style.spanCreate}>{errors.name && (<p className='error'>{errors.name}</p>)}</span>
             </div>
 
@@ -182,7 +185,7 @@ const Create = ()=>{
                             <div>
                                  <div>
                                     {e} 
-                                    <button key={e} onClick={()=>handleDelete(e)}>x</button>
+                                    <button key={e} className={style.deletetypes} onClick={()=>handleDelete(e)}>x</button>
                                 </div>
                             </div>
                             )
